@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/source/Trivselappen/Trivselappen/obj/Debug
+/source/Trivselappen/Trivselappen.Android/obj/Debug/res/drawable
+/source/Trivselappen/Trivselappen.iOS/obj/iPhone/Debug
+/source/Trivselappen/Trivselappen.WinPhone/obj
+*.suo
