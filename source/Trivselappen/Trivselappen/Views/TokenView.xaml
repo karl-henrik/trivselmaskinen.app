@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="Trivselappen.Views.TokenView">
+  <StackLayout>
+	  <Label Text="Token" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Entry Text="{Binding Token, Mode=TwoWay}" />
+    <Button Text="Register" Command="{Binding Register}" />
+  </StackLayout>
+</ContentPage>

@@ -7,13 +7,13 @@ using Trivselappen.ViewModels;
 
 namespace Trivselappen.Views
 {
-    public partial class MainView
+    public partial class TokenView
     {
-        public MainView()
+        public TokenView()
         {
             InitializeComponent();
 
-            BindingContext = new MainViewModel(this.Navigation);
+            BindingContext = new TokenViewModel();
         }
     }
 }

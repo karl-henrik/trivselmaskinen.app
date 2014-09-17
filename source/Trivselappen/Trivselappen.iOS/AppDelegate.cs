@@ -6,6 +6,8 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
 using Xamarin.Forms;
+using Autofac;
+using Trivselappen.Views;
 
 namespace Trivselappen.iOS
 {
@@ -36,6 +38,13 @@ namespace Trivselappen.iOS
             window.MakeKeyAndVisible();
 
             return true;
+        }
+
+        private void SetupIoC()
+        {
+
+
+            
         }
     }
 }
