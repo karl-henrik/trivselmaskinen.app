@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="Trivselappen.Views.QuestionView">
+  <StackLayout BackgroundColor="Red">
+	  <Label Text="Question" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Entry Text="{Binding Question, Mode=TwoWay}" />
+    <Button Text="Register answer" Command="{Binding Register}" />
+    <Label Text="{Binding Greeting}" Font="Large" HorizontalOptions="Center" />
+  </StackLayout>
+</ContentPage>

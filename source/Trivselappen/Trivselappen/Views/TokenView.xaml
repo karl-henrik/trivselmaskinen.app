@@ -3,8 +3,9 @@
 					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 					   x:Class="Trivselappen.Views.TokenView">
   <StackLayout>
-	  <Label Text="Token" VerticalOptions="Center" HorizontalOptions="Center" />
+	  <Label Text="Token" VerticalOptions="Center" HorizontalOptions="Center"/>
     <Entry Text="{Binding Token, Mode=TwoWay}" />
     <Button Text="Register" Command="{Binding Register}" />
-  </StackLayout>
+    <Label Text="{Binding Greeting}" Font="Large" HorizontalOptions="Center" />
+      </StackLayout>
 </ContentPage>

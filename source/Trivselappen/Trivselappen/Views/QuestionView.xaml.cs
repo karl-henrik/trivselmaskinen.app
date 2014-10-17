@@ -4,18 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Trivselappen.ViewModels;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace Trivselappen.Views
 {
-    public partial class MainView
+    public partial class QuestionView
     {
-        public MainView()
+        public QuestionView()
         {
             InitializeComponent();
 
-            BindingContext = new MainViewModel(this.Navigation);
+            BindingContext = new QuestionViewModel();
         }
     }
 }

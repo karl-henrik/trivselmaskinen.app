@@ -6,25 +6,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-  
 
 namespace Trivselappen.ViewModels
 {
-    public class TokenViewModel : INotifyPropertyChanged
+    public class QuestionViewModel : INotifyPropertyChanged
     {
-        
-        public TokenViewModel()
+
+        public QuestionViewModel()
         {
-            Token = "Token!!!";
+            Question = "The Question";
         }
 
-        private string _token;
-        public string Token { get{
-            return _token;
+        private string _question;
+        public string Question { get{
+            return _question;
         } 
             set{
-                _token = value;
-                RaisePropertyChanged("Token");
+                _question = value;
+                RaisePropertyChanged("Question");
                 }
         }
         string _greeting;
@@ -41,13 +40,14 @@ namespace Trivselappen.ViewModels
                 return new Command(
                     () =>
                     {
-                        var text = Token;
-                        Greeting = String.Format("Hello '{0}'", text);
+                        var text = Question;
+                        Greeting = String.Format("Your answer has been saved");
                     });
             }
 
-        }        
-        
+        }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(string property)
