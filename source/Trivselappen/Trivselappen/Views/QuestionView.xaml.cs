@@ -14,6 +14,7 @@ namespace Trivselappen.Views
             InitializeComponent();
 
             BindingContext = new QuestionViewModel();
+            
         }
     }
 }

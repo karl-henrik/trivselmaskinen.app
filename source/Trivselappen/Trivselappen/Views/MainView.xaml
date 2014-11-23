@@ -3,8 +3,8 @@
 					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 					   x:Class="Trivselappen.Views.MainView">
   <StackLayout>
-	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
     <Button Text="Enter token" Command="{Binding Token}" />
-    <Button Text="Goto question" Command="{Binding Question}" />
-    </StackLayout>
+    <Button Text="Get question" Command="{Binding Question}" />
+  </StackLayout>
 </ContentPage>
