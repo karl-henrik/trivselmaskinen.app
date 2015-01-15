@@ -16,7 +16,7 @@ namespace Trivselappen.ViewModels
         public QuestionViewModel()
         {
             Question q = new Question();
-            q.Text = "The question for today! Click one of the buttons to reply."; //ToDo: ska hämtas från backend.
+            q.Text = "Dagens fråga: Mår du bra?"; //ToDo: ska hämtas från backend.
             q.QuestionId = 0; //ToDo: ska sättas till id som hämtas ihop med frågan från backend.
             TodaysQuestion = q.Text;
             TodaysQuestionId = q.QuestionId;
