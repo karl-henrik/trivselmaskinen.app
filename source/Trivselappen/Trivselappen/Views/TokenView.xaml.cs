@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Trivselappen.ViewModels;
+using Xamarin.Forms;
 
 namespace Trivselappen.Views
 {
-    public partial class TokenView
+    public partial class TokenView : ContentPage
     {
-        public TokenView()
+        public TokenView(TokenViewModel viewModel)
         {
             InitializeComponent();
 
-            BindingContext = new TokenViewModel();
+            BindingContext = viewModel;
+            viewModel.Navigation = Navigation;
         }
     }
 }

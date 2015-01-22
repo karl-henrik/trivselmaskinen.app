@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Trivselappen.Views;
 using Xamarin.Forms;
+using Autofac;
 
 namespace Trivselappen.ViewModels
 {
@@ -29,7 +30,7 @@ namespace Trivselappen.ViewModels
             {
                 return new Command( () =>
                 {
-                     _navigation.PushAsync(new TokenView());
+                     _navigation.PushAsync(App.Container.Resolve<TokenView>());
 
                 });
             }

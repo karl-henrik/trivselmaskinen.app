@@ -5,17 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Trivselappen.ServiceAgents;
 using Xamarin.Forms;
-  
+using Autofac;
+using Trivselappen.Views;
 
 namespace Trivselappen.ViewModels
 {
     public class TokenViewModel : INotifyPropertyChanged
     {
-        
-        public TokenViewModel()
+        private IDeviceServiceAgent _deviceServiceAgent;
+        public INavigation Navigation {get;set;}
+
+        public TokenViewModel(IDeviceServiceAgent deviceServiceAgent)
         {
-            Token = "Token!!!";
+            _deviceServiceAgent = deviceServiceAgent;
+
+            Token = "";
         }
 
         private string _token;
@@ -39,10 +45,24 @@ namespace Trivselappen.ViewModels
             get
             {
                 return new Command(
-                    () =>
+                    async() =>
                     {
                         var text = Token;
                         Greeting = String.Format("Hello '{0}'", text);
+
+                        var device = new Models.Device()
+                        {
+                            DeviceId = "",
+                            MetaData = "",
+                            Token = Token
+                        };
+
+                        var result = await _deviceServiceAgent.RegisterDeviceAsync(device);
+
+                        if(result)
+                        {
+                            Navigation.PushAsync(App.Container.Resolve<QuestionView>());
+                        }
                     });
             }
 

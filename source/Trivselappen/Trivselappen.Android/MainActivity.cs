@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
+using Autofac;
 
 namespace Trivselappen.Droid
 {
@@ -19,6 +20,12 @@ namespace Trivselappen.Droid
             base.OnCreate(bundle);
 
             Xamarin.Forms.Forms.Init(this, bundle);
+
+            var builder = new ContainerBuilder();
+
+            App.SetupIoC(builder);
+
+            App.Container = builder.Build();
 
             SetPage(App.GetMainPage());
 
