@@ -3,11 +3,11 @@
 					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 					   x:Class="Trivselappen.Views.QuestionView">
   <StackLayout BackgroundColor="Red">
-    <Label Text="{Binding TodaysQuestion}" VerticalOptions="Center" Font="Large" HorizontalOptions="Center"/>
-    <Button Text="Röd" Command="{Binding Register1}"/>
-    <Button Text="Orange" Command="{Binding Register2}"/>
-    <Button Text="Gul" Command="{Binding Register3}"/>
-    <Button Text="Grön" Command="{Binding Register4}"/> 
+    <Label Text="{Binding TodaysQuestion}" VerticalOptions="Center" Font="Large" TextColor="Black" HorizontalOptions="Center"/>
+    <Button Text="Absolut!" Command="{Binding Register1}"/>
+    <Button Text="Jovars" Command="{Binding Register2}"/>
+    <Button Text="Njae" Command="{Binding Register3}"/>
+    <Button Text="Näpp!" Command="{Binding Register4}"/> 
     <Label Text="{Binding Greeting}" Font="Large"/>
   </StackLayout>
 </ContentPage>
