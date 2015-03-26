@@ -4,10 +4,11 @@
 					   x:Class="Trivselappen.Views.QuestionView">
   <StackLayout BackgroundColor="Red">
     <Label Text="{Binding TodaysQuestion}" VerticalOptions="Center" Font="Large" TextColor="Black" HorizontalOptions="Center"/>
-    <Button Text="Absolut!" Command="{Binding Register1}"/>
-    <Button Text="Jovars" Command="{Binding Register2}"/>
-    <Button Text="Njae" Command="{Binding Register3}"/>
-    <Button Text="Näpp!" Command="{Binding Register4}"/> 
+    <Button Text="Absolut!" HorizontalOptions="Center" Command="{Binding Register}" CommandParameter ="button1"/>
+    <Button Text="Jovars" HorizontalOptions="Center" Command="{Binding Register}" CommandParameter ="button2"/>
+    <Button Text="Njae" HorizontalOptions="Center" Command="{Binding Register}" CommandParameter = "button3"/>
+    <Button Text="Näpp!" HorizontalOptions="Center" Command="{Binding Register}" CommandParameter ="button4"/>
+    <!--<Button Text="Näpp!" HorizontalOptions="Center" Command="{Binding Register}" CommandParameter ="{Binding Path=button4}"/>-->
     <Label Text="{Binding Greeting}" Font="Large"/>
   </StackLayout>
 </ContentPage>

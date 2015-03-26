@@ -20,6 +20,7 @@ namespace Trivselappen.ViewModels
             q.QuestionId = 0; //ToDo: ska sättas till id som hämtas ihop med frågan från backend.
             TodaysQuestion = q.Text;
             TodaysQuestionId = q.QuestionId;
+            _answerValue = 0;
 
         }
 
@@ -38,6 +39,12 @@ namespace Trivselappen.ViewModels
         }
             set { _questionId = value; }
         }
+        private decimal _answerValue;
+        private decimal TodaysAnswerValue{ get{
+            return _answerValue;
+        }
+            set { _answerValue = value; }
+        }
 
         string _greeting;
         public string Greeting
@@ -47,76 +54,45 @@ namespace Trivselappen.ViewModels
         }
 
         //Kommentar till nedan ICommands: Borde man inte kunna lösa detta med switch istället? All kod är ju lika utom answer.Value..
-        public ICommand Register1
+        
+        //
+
+        public ICommand Register
         {
             get
             {
-                return new Command(
-                    () =>
+                Action<string> action = (string parameter) =>
+                {
+                    if (parameter == "button1")
                     {
-                        Answer answer = new Answer();
-                        answer.Value = 1;
-                        answer.DeviceId = "ToDo";
-                        answer.Timestamp = DateTime.Now;
-                        answer.QuestionId = _questionId;
-                        Greeting = String.Format("Your answer has been saved!");
-                    });
-            }
-
-        }
-        public ICommand Register2
-        {
-            get
-            {
-                return new Command(
-                    () =>
+                        _answerValue = 1;
+                    }
+                    else if (parameter == "button2")
                     {
-                        Answer answer = new Answer();
-                        answer.Value = 2;
-                        answer.DeviceId = "ToDo";
-                        answer.Timestamp = DateTime.Now;
-                        answer.QuestionId = _questionId;
-                        Greeting = String.Format("Your answer has been saved!");
-                    });
-            }
-
-        }
-
-        public ICommand Register3
-        {
-            get
-            {
-                return new Command(
-                    () =>
+                        _answerValue = 2;
+                    }
+                    else if (parameter == "button3")
                     {
-                        Answer answer = new Answer();
-                        answer.Value = 3;
-                        answer.DeviceId = "ToDo";
-                        answer.Timestamp = DateTime.Now;
-                        answer.QuestionId = _questionId;
-                        Greeting = String.Format("Your answer has been saved!");
-                    });
-            }
-
-        }
-
-        public ICommand Register4
-        {
-            get
-            {
-                return new Command(
-                    () =>
+                        _answerValue = 3;
+                    }
+                    else if (parameter == "button4")
                     {
-                        Answer answer = new Answer();
-                        answer.Value = 4;
-                        answer.DeviceId = "ToDo";
-                        answer.Timestamp = DateTime.Now;
-                        answer.QuestionId = _questionId;
-                        Greeting = String.Format("Your answer has been saved!");
-                    });
-            }
+                        _answerValue = 4;
+                    }
 
+                    Answer answer = new Answer();
+                    answer.Value = TodaysAnswerValue;
+                    answer.DeviceId = "ToDo";
+                    answer.Timestamp = DateTime.Now;
+                    answer.QuestionId = _questionId;
+                    Greeting = String.Format("Your answer has been saved!");
+                };
+
+                
+                return new Command<string>(action);
+            }
         }
+	
 
         public event PropertyChangedEventHandler PropertyChanged;
 
